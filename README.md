@@ -7,4 +7,4 @@ Hari ini adalah hari rabu
 
 
 
-Hari ini adalah hari ulang tahun
+Hari ini adalah hari raya idul fitri
