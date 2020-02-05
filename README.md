@@ -2,5 +2,9 @@
 Hari pertama belajar ruby
 Hari ini adalah hari rabu
 
-Ini branch 2
-cek 1
+
+
+
+
+
+Hari ini adalah hari ulang tahun
