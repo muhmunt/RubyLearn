@@ -74,10 +74,3 @@ menu(array1)
 menu('Siapa','Dimana','Rumah','Lokasi')
 
 puts ''
-
-# Array Parameter
-def setarray(itemA, itemB, itemC)
-    puts itemA,itemB,itemC
-end
-arr1 = ['Barang','Thing','Device']
-setarray(*arr1)
