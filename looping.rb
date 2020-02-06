@@ -13,11 +13,11 @@ end
 
 # Time with gets
 
-# 3.times do
-#     print 'masukkan kata :'
-#     a = gets.chomp
-#     puts a
-# end
+3.times do
+    print 'masukkan kata :'
+    a = gets.chomp
+    puts a
+end
 
 # One line times
 
