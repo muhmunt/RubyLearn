@@ -249,3 +249,209 @@ mesinku.cetak
 mesinku.text = "setter"
 mesinku.duration = "semenit"
 mesinku.cetak
+
+# PRIVATE METHOD
+
+class  MesinPencetak
+    attr_accessor :text
+    # attr_accessor -> untuk pengganti attr_writer & attr_reader
+    
+    def initialize(text)
+        @text = text
+    end
+
+    def cetak(format)
+        cekformat(@text, format)
+    end
+
+    private
+    def cekformat(text, format)
+        if format == :plain
+            text 
+        elsif format == :blink  
+        "*** #{text} ***"
+        end
+    end
+    
+end
+
+mesinku = MesinPencetak.new("Belajar Ruby dan Ruby on Rails")
+puts mesinku.cetak(:blink)
+puts mesinku.cetak(:plain)
+
+# Inheritanceq
+
+class Siswa
+    attr_accessor :nama, :materi, :nilai
+    def initialize(nama, materi, nilai)
+        @nama = nama
+        @materi = materi
+        @nilai = nilai
+    end
+
+    def belajar
+        puts "Siswa #{@nama} sedang belajar #{@materi}"
+    end
+
+    def ulangan
+        puts "Siswa #{@nama} mendapatkan nilai #{@nilai} untuk materi #{@materi}."
+    end
+
+end
+
+class Kelas12 < Siswa 
+
+    attr_accessor :mapel, :nilai_un
+    
+    def initialize(mapel, nilai_un)
+        @mapel = mapel
+        @nilai_un = nilai_un
+    end
+    
+    def unbk
+        puts "Siswa #{@nama} mengerjakan UN mapel #{@mapel} dengan nilai #{@nilai}."
+    end
+
+    def belajar
+        puts "Siswa #{@nama} belajar materi #{@materi} dengan serius"
+    end
+end
+sutera = Siswa.new('Sutera','Ruby',10)
+sutera.belajar
+sutera.ulangan
+
+mutia = Kelas12.new('Matematika', 10)
+mutia.nama = "Mutia"
+mutia.materi = "Ruby on Rails"
+mutia.nilai = 9
+mutia.belajar
+mutia.ulangan
+mutia.unbk
+
+
+class Siswa
+    attr_accessor :nama, :materi, :nilai
+    def initialize(nama, materi, nilai)
+        @nama = nama
+        @materi = materi
+        @nilai = nilai
+    end
+
+    def belajar
+        puts "Siswa #{@nama} sedang belajar #{@materi}"
+    end
+
+    def ulangan
+        puts "Siswa #{@nama} mendapatkan nilai #{@nilai} untuk materi #{@materi}."
+    end
+
+end
+class Kelas12 < Siswa 
+
+    attr_accessor :mapel, :nilai_un
+    
+    def initialize(mapel, nilai_un)
+        @mapel = mapel
+        @nilai_un = nilai_un
+    end
+    
+    def belajar 
+        puts "Siswa #{@nama} belajar #{@materi} dengan serius"
+    end
+
+    def unbk
+        puts "Siswa #{@nama} mengerjakan UN mapel #{@mapel} dengan nilai #{@nilai}."
+    end
+end
+
+puts '-----'
+
+class ApiConnection
+    attr_accessor :url, :name 
+    def initialize(url, name)
+        @url = url
+        @name = name
+    end
+
+    def connect 
+        @connect = true #logika program disini
+    end
+    
+    def status
+        if @connect 
+            :connected
+        else
+            :unconnected
+        end
+    end
+end
+
+class FacebookConnection < ApiConnection
+    def version 
+        1
+    end
+
+    def status
+        :connected
+    end
+end
+
+facebook_connection = FacebookConnection.new('https://instagram.com','instagram')
+status = facebook_connection.status
+version = facebook_connection.version 
+puts status
+puts version
+
+class ApiConnection
+    attr_accessor :url, :name 
+    def initialize(url, name)
+        @url = url
+        @name = name
+    end
+
+    def connect 
+        @connect = true #logika program disini
+    end
+    
+    def status
+        if @connect 
+            :connected
+        else
+            :unconnected
+        end
+    end
+end
+
+class FacebookConnection < ApiConnection
+    def version 
+        1
+    end
+
+    def connect 
+        super
+        puts 'connection established'
+    end
+
+    def status
+        super
+        :connected
+    end
+end
+
+class FacebookConnection < ApiConnection
+    class << self 
+        def version 
+            2
+        end
+        def status
+            :connected
+        end
+    end
+end
+puts facebook_connection.status
+puts facebook_connection.version 
+facebook_connection = FacebookConnection.new('https://instagram.com','instagram')
+status = facebook_connection.status
+version = facebook_connection.version 
+puts status
+puts version
