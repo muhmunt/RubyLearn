@@ -13,3 +13,6 @@ arr = []
 end
 
 puts arr
+
+puts '--------'
+

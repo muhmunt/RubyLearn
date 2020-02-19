@@ -9,6 +9,8 @@ halo
 def hai
     return 'Saya disini' #memaksa -> output
     return 'Aku'
+    # Jika tidak menggunakan return di semua nya maka  
+    # yang akan ditampilkan adalah data yang paling bawah
     'Saya disana'
 end
 puts hai

@@ -126,3 +126,48 @@ puts array
 
 new_arr = %w(satu dua tiga empat lima)
 puts new_arr
+puts '==============='
+
+# Acak array dengan shuffle
+arr = [1,2,3,4,5]
+puts "#{arr.shuffle!}" #menggunakan # agar permanent
+puts "#{arr}"
+puts '==============='
+
+# Looping array dengan while
+total = 0
+while total < arr.length do
+    puts "#{total}"
+    total += 1
+end
+puts '==============='
+arr2 = [1,2,3,4,5]
+for item in arr2  #for -> looping khusus untuk array
+    puts item
+end
+puts '==============='
+
+arr2.map do |f|
+    puts f
+end
+puts '==============='
+
+# Cara imperative atau tradisional
+# Filter Array
+array = [60,70,80,100,95]
+arrayBaru = []
+array.each do |item|
+    if item >= 70
+        arrayBaru << item
+    end
+end
+puts "#{arrayBaru}"
+puts '==============='
+
+# Select
+arrayBaru = array.select do |item|
+    item < 100
+end
+puts "#{arrayBaru}"
+# One Line Select
+puts "#{array.select{|item|item < 100}}"

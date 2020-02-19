@@ -7,3 +7,4 @@
 #print "Kata kedua\n"
 #print "Kata ketiga\n"
 
+# Classing
