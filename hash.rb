@@ -57,4 +57,3 @@ end
 
 puts "ambil #{hash.keys}"
 puts "#{hash.values}"
-"

@@ -17,20 +17,18 @@ class ApiConnection
         end
     end
 end
-
+# class seft
 class FacebookConnection < ApiConnection
-    def version 
-        1
-    end
+    class << self
+        
+        def version 
+            2
+        end
+    
+        def status
+            :connected
+        end
 
-    def connect 
-        super
-        puts 'connection established'
-    end
-
-    def status
-        super
-        :connected
     end
 end
 

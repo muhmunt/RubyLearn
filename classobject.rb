@@ -47,6 +47,9 @@ hasil_pengurangan = calc.pengurangan
 puts "Hasil = #{hasil_pengurangan}"
 
 # OOP GETTER-SETTER
+
+# metthod setter yaitu method yang berfungsi untuk mengeset atau mengubah nilai dari parameter sebuah object
+
 class Print
     def initialize(text)
         @text = text
@@ -455,3 +458,64 @@ status = facebook_connection.status
 version = facebook_connection.version 
 puts status
 puts version
+
+
+# THrowBack GETTER SETTER
+class MesinPencetak
+    # attr_reader :text
+    attr_writer :text 
+    
+    def initialize(text)
+        @text = text 
+    end             
+
+    def cetak
+        puts "Hari ini saya belajar method #{@text}"
+    end
+end
+
+mesinku = MesinPencetak.new("getter");
+puts mesinku.cetak
+mesinku.text = "Setter"
+puts mesinku.cetak
+
+puts '---------'
+# Module merupakan kumpulan dari class, method, dan constants
+module NamaModule
+    XXX = 100
+
+    LOKAL = "Lokal variable"
+    def method 
+        puts "dari dalam konstan"        
+    end
+
+    module A
+        XXX = 200
+    end
+end
+
+puts NamaModule::XXX 
+puts NamaModule:: LOKAL
+puts NamaModule::A::XXX
+
+module Kerenz
+    class  ApiConnection
+        def connect 
+            puts 'konek dari Kerenz::ApiConnection'
+        end
+    end
+end
+
+module Kool 
+    class ApiConnection
+        def connect
+            puts 'konek dari Kool:ApiConnection'
+        end
+    end
+end
+
+con = Kerenz::ApiConnection.new 
+con.connect 
+
+con = Kool::ApiConnection.new 
+con.connect
